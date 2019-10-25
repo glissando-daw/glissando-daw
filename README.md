@@ -24,6 +24,7 @@ Web MIDI) and WebAssembly.
 - [Web MIDI API][web-midi-api]
 - [GridSound DAW][gridsound]
 - [Amped Studio 2][amped-studio-2]
+- [Web Audio Modules][web-audio-modules]
 
 <!-- References -->
 [web-assembly]: https://webassembly.org/
@@ -38,3 +39,4 @@ Web MIDI) and WebAssembly.
 [web-midi-api]: https://www.w3.org/TR/webmidi/
 [gridsound]: https://github.com/gridsound/daw
 [amped-studio-2]: https://ampedstudio.com/
+[web-audio-modules]: https://www.webaudiomodules.org/
