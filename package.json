@@ -1,10 +1,10 @@
 {
-  "name": "glissando-daw",
+  "name": "glissando",
   "version": "0.0.1",
   "description": "A web-based digital audio workstation using the web platform APIs (Web Audio, Web MIDI) and WebAssembly",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rodrigo-garcia-leon/glissando-daw.git"
+    "url": "git+https://github.com/rodrigo-garcia-leon/glissando.git"
   },
   "keywords": [
     "daw",
@@ -26,9 +26,9 @@
   "author": "Rodrigo García <yo@rodrigogarcia.me>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rodrigo-garcia-leon/glissando-daw/issues"
+    "url": "https://github.com/rodrigo-garcia-leon/glissando/issues"
   },
-  "homepage": "https://github.com/rodrigo-garcia-leon/glissando-daw#readme",
+  "homepage": "https://github.com/rodrigo-garcia-leon/glissando#readme",
   "scripts": {
     "start": "es-dev-server --app-index index.html --node-resolve --watch --open",
     "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",

@@ -1,4 +1,4 @@
-# Glissando DAW
+# Glissando
 
 A web-based digital audio workstation using the web platform APIs (Web Audio,
 Web MIDI) and WebAssembly.
