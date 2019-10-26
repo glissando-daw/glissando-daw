@@ -1,0 +1,15 @@
+@import '/node_modules/normalize.css/normalize.css';
+@import url('/node_modules/@typopro/web-space-mono/TypoPRO-SpaceMono.css');
+
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Space Mono', monospace;
+  line-height: 1.4;
+}
+
+main {
+  height: 100%;
+  margin: auto;
+  width: 1400px;
+}
