@@ -13,6 +13,7 @@ Web MIDI) and WebAssembly.
 # Resources
 
 - [MDN Web Audio API Docs][mdn-web-audio-api-docs]
+- [MDN Web Audio Examples][mdn-web-audio-examples]
 - [WebAssembly][web-assembly]
 - [MDN WebAssembly Docs][mdn-webassembly-docs]
 - [Awesome Wasm][awesome-wasm]
@@ -28,6 +29,7 @@ Web MIDI) and WebAssembly.
 
 <!-- References -->
 [mdn-web-audio-api-docs]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
+[mdn-web-audio-examples]: https://github.com/mdn/webaudio-examples
 [web-assembly]: https://webassembly.org/
 [mdn-webassembly-docs]: https://developer.mozilla.org/en-US/docs/WebAssembly
 [awesome-wasm]: https://github.com/mbasso/awesome-wasm
