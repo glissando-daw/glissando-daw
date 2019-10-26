@@ -5,7 +5,13 @@
     <body>
         <main>
             <h1>Glissando</h1>
-            <p>A web-based digital audio workstation using the web platform APIs (Web Audio, Web MIDI) and WebAssembly.</p>
+            <section id="controls">
+                <input id="volume" type="range" min="0" max="1" step="0.1" value="1"></input>
+                <div id="transport">
+                    <button id="start">►</button>
+                    <button id="stop">◼︎</button>
+                </div>
+            </section>
         </main>
         <script type="module" src="/packages/glissando-app/glissando-app.js"></script>
     </body>
