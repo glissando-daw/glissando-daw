@@ -14,6 +14,8 @@ osc.frequency.setValueAtTime(OSC_FREQ, audioCtx.currentTime);
 osc.connect(amp).connect(audioCtx.destination);
 osc.start();
 
+audioCtx.suspend();
+
 document.getElementById('volume').addEventListener('input', e => {
   setGainValue(parseFloat(e.target.value));
 });
