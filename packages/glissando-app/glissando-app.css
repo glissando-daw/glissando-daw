@@ -1,5 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
 @import '/node_modules/normalize.css/normalize.css';
-@import url('/node_modules/@typopro/web-space-mono/TypoPRO-SpaceMono.css');
 
 body {
   background-color: black;

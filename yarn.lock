@@ -713,11 +713,6 @@
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
 
-"@typopro/web-space-mono@^3.7.5":
-  version "3.7.5"
-  resolved "https://registry.yarnpkg.com/@typopro/web-space-mono/-/web-space-mono-3.7.5.tgz#c4372d3ec44e2473fcb89eac56a884262cdc1ab9"
-  integrity sha512-EGb1VLp3CqTSAMYff/54aqlinozH2WCDRdPSoXB9sGKdmDv/3VuEylXzhPNVLVYGaWM8R98NtA+fiMIPa0O1DA==
-
 "@webcomponents/webcomponentsjs@^2.2.10":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@webcomponents/webcomponentsjs/-/webcomponentsjs-2.3.0.tgz#d17c67e9602d46f5a6c425bc00613bba83dcd0e2"
