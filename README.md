@@ -11,3 +11,18 @@ Web MIDI) and WebAssembly.
 - VST support
 - Mixer
 - MIDI controllers
+
+## Setup
+
+### MacOS
+
+Install `npm`:
+```shell
+$ brew install npm
+```
+
+Install `yarn` and run app locally:
+```shell
+$ npm i -g yarn
+$ yarn start
+```
