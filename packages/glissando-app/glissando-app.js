@@ -36,8 +36,8 @@ const amp2 = audioCtx.createGain();
 const source = audioCtx.createBufferSource();
 source.buffer = createSineWaveAudioBuffer(15);
 
-setGainValue(amp, MAX_GAIN);
-setGainValue(amp2, MAX_GAIN);
+setGainValue(amp, MAX_GAIN / 10);
+setGainValue(amp2, MAX_GAIN / 10);
 
 osc.connect(amp).connect(audioCtx.destination);
 osc.start();
@@ -61,3 +61,14 @@ document.getElementById('volume-osc').addEventListener('input', e => {
 document.getElementById('volume-src-buffer').addEventListener('input', e => {
   setGainValue(amp2, parseFloat(e.target.value));
 });
+
+async function init() {
+  // eslint-disable-next-line
+  const js = await import('/web_modules/@glissando/glissando-vst/glissando_vst.js');
+
+  await js.default();
+  js.greet('WebAssembly');
+  audioCtx.suspend();
+}
+
+init();

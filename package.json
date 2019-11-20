@@ -30,7 +30,8 @@
   },
   "homepage": "https://github.com/rodrigo-garcia-leon/glissando#readme",
   "scripts": {
-    "prepare": "pika install",
+    "prepare": "pika install && yarn prepare:glissando-vst",
+    "prepare:glissando-vst": "mkdir -p web_modules/@glissando/glissando-vst && cp node_modules/@glissando/glissando-vst/* web_modules/@glissando/glissando-vst",
     "start": "es-dev-server --app-index index.html --node-resolve --watch --open",
     "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
     "format:eslint": "eslint --ext .js,.html . --fix --ignore-path .gitignore",
@@ -39,10 +40,9 @@
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "format": "npm run format:eslint && npm run format:prettier"
   },
-  "dependencies": {
-    "normalize.css": "^8.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@glissando/glissando-vst": "^0.1.0",
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "@open-wc/eslint-config": "^1.0.0",
@@ -52,7 +52,8 @@
     "es-dev-server": "^1.18.7",
     "eslint": "^6.1.0",
     "husky": "^1.0.0",
-    "lint-staged": "^8.0.0"
+    "lint-staged": "^8.0.0",
+    "normalize.css": "^8.0.1"
   },
   "eslintConfig": {
     "extends": [
