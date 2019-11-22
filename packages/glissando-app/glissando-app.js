@@ -63,8 +63,8 @@ document.getElementById('volume-src-buffer').addEventListener('input', e => {
 });
 
 async function init() {
-  // eslint-disable-next-line
-  const js = await import('/web_modules/@glissando/glissando-vst/glissando_vst.js');
+  // eslint-disable-next-line import/no-unresolved
+  const js = await import('glissando-vst');
 
   await js.default();
   js.greet('WebAssembly');
