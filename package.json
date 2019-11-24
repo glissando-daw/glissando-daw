@@ -32,7 +32,7 @@
   "scripts": {
     "prepare": "pika install && yarn prepare:glissando-vst",
     "prepare:glissando-vst": "mkdir -p web_modules/@glissando/glissando-vst && cp node_modules/@glissando/glissando-vst/* web_modules/@glissando/glissando-vst",
-    "start": "es-dev-server --app-index index.html --node-resolve --watch --open",
+    "start": "es-dev-server --app-index index.html --watch --open",
     "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
     "format:eslint": "eslint --ext .js,.html . --fix --ignore-path .gitignore",
     "lint:prettier": "prettier \"**/*.js\" --check --ignore-path .gitignore",
