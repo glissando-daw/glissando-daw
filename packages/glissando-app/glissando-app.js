@@ -62,6 +62,28 @@ document.getElementById('volume-src-buffer').addEventListener('input', e => {
   setGainValue(amp2, parseFloat(e.target.value));
 });
 
+async function setupAudioWorklet() {
+  try {
+    await audioCtx.audioWorklet.addModule('/packages/glissando-app/white-noise-processor.js');
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error(error);
+  }
+
+  const whiteNoiseAmp = audioCtx.createGain();
+  const whiteNoiseNode = new AudioWorkletNode(audioCtx, 'white-noise-processor');
+
+  setGainValue(whiteNoiseAmp, MAX_GAIN / 10);
+
+  whiteNoiseNode.connect(whiteNoiseAmp).connect(audioCtx.destination);
+
+  document.getElementById('volume-white-noise').addEventListener('input', e => {
+    setGainValue(whiteNoiseAmp, parseFloat(e.target.value));
+  });
+}
+
+setupAudioWorklet();
+
 async function init() {
   // eslint-disable-next-line import/no-unresolved
   const js = await import('glissando-vst');
