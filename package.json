@@ -42,18 +42,18 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@glissando/glissando-vst": "^0.1.0",
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
+    "@glissando/glissando-vst": "^0.1.0",
     "@open-wc/eslint-config": "^1.0.0",
     "@open-wc/prettier-config": "^0.1.10",
     "@pika/web": "^0.6.1",
     "cz-conventional-changelog": "3.0.2",
     "es-dev-server": "^1.18.7",
     "eslint": "^6.1.0",
-    "normalize.css": "^8.0.1",
     "husky": "^1.3.1",
-    "lint-staged": "^8.0.0"
+    "lint-staged": "^8.0.0",
+    "normalize.css": "^8.0.1"
   },
   "eslintConfig": {
     "extends": [
