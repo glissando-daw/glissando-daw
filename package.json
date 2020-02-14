@@ -38,7 +38,8 @@
     "lint:prettier": "prettier \"**/*.js\" --check --ignore-path .gitignore",
     "format:prettier": "prettier \"**/*.js\" --write --ignore-path .gitignore",
     "lint": "npm run lint:eslint && npm run lint:prettier",
-    "format": "npm run format:eslint && npm run format:prettier"
+    "format": "npm run format:eslint && npm run format:prettier",
+    "build:docs": "mmdc -i docs/diagram.mmd -o docs/diagram.svg"
   },
   "dependencies": {},
   "devDependencies": {
@@ -53,6 +54,7 @@
     "eslint": "^6.1.0",
     "husky": "^1.3.1",
     "lint-staged": "^8.0.0",
+    "mermaid.cli": "^0.5.1",
     "normalize.css": "^8.0.1"
   },
   "eslintConfig": {

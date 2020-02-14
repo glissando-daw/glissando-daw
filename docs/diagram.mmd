@@ -1,0 +1,22 @@
+graph LR
+  mouse --> ui
+  keyboard --> midi
+
+  subgraph input
+    mouse
+    keyboard
+  end
+
+  ui --> vst
+  ui --> amp
+  midi --> vst
+
+  subgraph audio engine
+    subgraph track
+      vst
+      amp
+    end
+
+    vst --> amp
+    amp --> output
+  end
