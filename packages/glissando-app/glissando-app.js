@@ -1,3 +1,6 @@
+import '../glissando-slider/glissando-slider.js';
+import '../glissando-knob/glissando-knob.js';
+
 const KEY_TO_NOTE = {
   KeyA: 'C4',
   KeyW: 'C#4',
@@ -14,35 +17,62 @@ const KEY_TO_NOTE = {
   KeyK: 'C5',
 };
 
-const runWasm = async () => {
-  const rust = await import('/web_modules/@glissando/glissando-synth/glissando_synth.js');
-  await rust.default();
+class GlissandoApp extends HTMLElement {
+  connectedCallback() {
+    const main = document.createElement('main');
 
-  const synth = new rust.Osc();
-  synth.suspend();
+    const title = document.createElement('h1');
+    title.innerText = 'Glissando';
+    main.appendChild(title);
 
-  document.addEventListener('keydown', e => {
-    if (!(e.code in KEY_TO_NOTE)) {
-      return;
-    }
+    this.slider = document.createElement('glissando-slider');
+    main.appendChild(this.slider);
 
-    const note = KEY_TO_NOTE[e.code];
-    synth.set_note(note);
+    const knob = document.createElement('glissando-knob');
+    main.appendChild(knob);
 
-    synth.resume();
-  });
+    const footer = document.createElement('footer');
 
-  document.addEventListener('keyup', () => {
+    const status = document.createElement('span');
+    status.innerText = 'status';
+    footer.appendChild(status);
+
+    this.appendChild(main);
+    this.appendChild(footer);
+
+    this.slider.addEventListener('change', e => {
+      status.innerText = `slider thumb position: ${e.detail}`;
+    });
+
+    this.runWasm();
+  }
+
+  async runWasm() {
+    const rust = await import('/web_modules/@glissando/glissando-synth/glissando_synth.js');
+    await rust.default();
+
+    const synth = new rust.Osc();
     synth.suspend();
-  });
 
-  document.getElementById('volume-osc').addEventListener('input', e => {
-    synth.set_osc_amp(parseFloat(e.target.value));
-  });
+    document.addEventListener('keydown', e => {
+      if (!(e.code in KEY_TO_NOTE)) {
+        return;
+      }
 
-  document.getElementById('volume-src-buffer').addEventListener('input', e => {
-    synth.set_audio_buffer_amp(parseFloat(e.target.value));
-  });
-};
+      const note = KEY_TO_NOTE[e.code];
+      synth.set_note(note);
 
-runWasm();
+      synth.resume();
+    });
+
+    document.addEventListener('keyup', () => {
+      synth.suspend();
+    });
+
+    this.slider.addEventListener('change', e => {
+      synth.set_osc_amp(parseFloat(e.detail));
+    });
+  }
+}
+
+customElements.define('glissando-app', GlissandoApp);

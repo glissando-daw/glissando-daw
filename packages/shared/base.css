@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
+
+html {
+  --spacer: 32px;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Space Mono', monospace;
+  line-height: 1.4;
+  margin: 0;
+}
+
+main {
+  height: calc(100% - var(--spacer));
+}
+
+footer {
+  position: relative;
+  height: var(--spacer);
+}
+
+span {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+glissando-app {
+  display: block;
+  height: calc(100% - var(--spacer) * 2);
+  margin: var(--spacer) auto;
+  width: 80%;
+}
+
+glissando-slider {
+  display: block;
+  padding: var(--spacer) 0;
+}
