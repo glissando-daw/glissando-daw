@@ -1,5 +1,5 @@
 const runWasm = async () => {
-  const rust = await import('./glissando-vst/glissando_vst.js');
+  const rust = await import('./glissando-synth/glissando_synth.js');
   await rust.default();
 
   const MAX_GAIN = 1;
