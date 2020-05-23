@@ -868,10 +868,10 @@
   dependencies:
     find-up "^4.0.0"
 
-"@glissando/glissando-vst@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@glissando/glissando-vst/-/glissando-vst-0.1.0.tgz#3fc62e6c7fc81687aaaebb8cc6f8eea75a73a912"
-  integrity sha512-rzFy1Zjkfe5RDFYUGKR3iWFPFOSXYyXPFp7cCN95/FYPMWTQ+cZq5lb/pjy0CR7JlEHN7BlQSZljVeuGe8/rug==
+"@glissando/glissando-synth@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@glissando/glissando-synth/-/glissando-synth-0.1.2.tgz#cc6b950f5c898eedc2dfe680e35506b595c6aab2"
+  integrity sha512-cMS2+lwM/BoVPnljXQTZDBdfB2xwQjKGvLQzbAf8usICpyRElEYf2JrxK2EC7fzhK6LZnkKBiNBY0oFOqf8KTA==
 
 "@marionebl/sander@^0.6.0":
   version "0.6.1"
