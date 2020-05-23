@@ -45,7 +45,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
-    "@glissando/glissando-synth": "^0.1.0",
+    "@glissando/glissando-synth": "^0.1.2",
     "@open-wc/eslint-config": "^1.0.0",
     "@open-wc/prettier-config": "^0.1.10",
     "@pika/web": "^0.6.1",
