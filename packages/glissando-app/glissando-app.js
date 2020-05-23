@@ -5,11 +5,11 @@ const runWasm = async () => {
   const synth = new rust.Osc();
   synth.suspend();
 
-  document.getElementById('start').addEventListener('click', () => {
+  document.addEventListener('keydown', () => {
     synth.resume();
   });
 
-  document.getElementById('stop').addEventListener('click', () => {
+  document.addEventListener('keyup', () => {
     synth.suspend();
   });
 
