@@ -30,8 +30,8 @@
   },
   "homepage": "https://github.com/rodrigo-garcia-leon/glissando#readme",
   "scripts": {
-    "prepare": "pika install && yarn prepare:glissando-vst",
-    "prepare:glissando-vst": "mkdir -p web_modules/@glissando/glissando-vst && cp node_modules/@glissando/glissando-vst/* web_modules/@glissando/glissando-vst",
+    "prepare": "pika install && yarn prepare:glissando-synth",
+    "prepare:glissando-synth": "mkdir -p web_modules/@glissando/glissando-synth && cp node_modules/@glissando/glissando-synth/* web_modules/@glissando/glissando-synth",
     "start": "es-dev-server --app-index index.html --watch --open",
     "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
     "format:eslint": "eslint --ext .js,.html . --fix --ignore-path .gitignore",
@@ -45,7 +45,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
-    "@glissando/glissando-vst": "^0.1.0",
+    "@glissando/glissando-synth": "^0.1.0",
     "@open-wc/eslint-config": "^1.0.0",
     "@open-wc/prettier-config": "^0.1.10",
     "@pika/web": "^0.6.1",
