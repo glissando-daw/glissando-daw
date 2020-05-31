@@ -1,5 +1,5 @@
 const WIDTH = 64;
-const HEIGHT = 512;
+const HEIGHT = 256;
 const TRACK_STROKE_SIZE = 1;
 const THUMB_STROKE_SIZE = 2;
 const THUMB_WIDTH = 24;

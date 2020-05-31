@@ -28,8 +28,8 @@ class GlissandoApp extends HTMLElement {
     this.slider = document.createElement('glissando-slider');
     main.appendChild(this.slider);
 
-    const knob = document.createElement('glissando-knob');
-    main.appendChild(knob);
+    this.knob = document.createElement('glissando-knob');
+    main.appendChild(this.knob);
 
     const footer = document.createElement('footer');
 
@@ -42,6 +42,10 @@ class GlissandoApp extends HTMLElement {
 
     this.slider.addEventListener('change', e => {
       status.innerText = `slider thumb position: ${e.detail}`;
+    });
+
+    this.knob.addEventListener('change', e => {
+      status.innerText = `knob angle: ${e.detail}`;
     });
 
     this.runWasm();
@@ -71,6 +75,10 @@ class GlissandoApp extends HTMLElement {
 
     this.slider.addEventListener('change', e => {
       synth.set_osc_amp(parseFloat(e.detail));
+    });
+
+    this.knob.addEventListener('change', e => {
+      synth.set_audio_buffer_amp(parseFloat(e.detail));
     });
   }
 }
