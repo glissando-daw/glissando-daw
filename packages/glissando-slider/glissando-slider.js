@@ -47,12 +47,13 @@ class GlissandoSlider extends HTMLElement {
     const { top } = this.canvas.getBoundingClientRect();
 
     this.thumbPosition = Math.round(y - top);
+    this.amount = 1.0 - this.thumbPosition / HEIGHT;
 
     this.draw();
 
     this.dispatchEvent(
       new CustomEvent('change', {
-        detail: this.thumbPosition,
+        detail: this.amount,
       }),
     );
   }
