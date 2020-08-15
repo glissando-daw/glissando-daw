@@ -38,7 +38,7 @@ class GlissandoSlider extends HTMLElement {
       WIDTH / 2 - THUMB_WIDTH / 2,
       this.thumbPosition,
       THUMB_WIDTH,
-      THUMB_STROKE_SIZE,
+      THUMB_STROKE_SIZE
     );
   }
 
@@ -54,7 +54,7 @@ class GlissandoSlider extends HTMLElement {
     this.dispatchEvent(
       new CustomEvent('change', {
         detail: this.amount,
-      }),
+      })
     );
   }
 }

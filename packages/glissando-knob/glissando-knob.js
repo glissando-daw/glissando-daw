@@ -39,11 +39,14 @@ class GlissandoKnob extends HTMLElement {
     this.ctx.stroke();
 
     // thumb
-    this.ctx.beginPath();
     const startX = CENTER_X + OFFSET_RADIUS * Math.cos(this.thumbAngle);
     const startY = CENTER_Y + OFFSET_RADIUS * Math.sin(this.thumbAngle);
-    const endX = CENTER_X + (OFFSET_RADIUS + THUMB_WIDTH) * Math.cos(this.thumbAngle);
-    const endY = CENTER_Y + (OFFSET_RADIUS + THUMB_WIDTH) * Math.sin(this.thumbAngle);
+    const endX =
+      CENTER_X + (OFFSET_RADIUS + THUMB_WIDTH) * Math.cos(this.thumbAngle);
+    const endY =
+      CENTER_Y + (OFFSET_RADIUS + THUMB_WIDTH) * Math.sin(this.thumbAngle);
+
+    this.ctx.beginPath();
     this.ctx.moveTo(startX, startY);
     this.ctx.lineTo(endX, endY);
     this.ctx.stroke();
@@ -55,22 +58,33 @@ class GlissandoKnob extends HTMLElement {
 
     const clickX = x - left - CENTER_X;
     const clickY = y - top - CENTER_Y;
+
     this.thumbAngle = Math.atan2(clickY, clickX);
+
     // map atan2 range from [0, pi] to [0, pi], and from [-pi, 0] to [pi, 2*pi]
     if (this.thumbAngle < 0) {
       this.thumbAngle += 2.0 * Math.PI;
     }
+
     // map from [0, pi/4] to [2*pi, 5/4*pi] to make normalization continuous
     if (this.thumbAngle >= 0 && this.thumbAngle <= OFFSET_ANGLE) {
       this.thumbAngle += 2.0 * Math.PI;
     }
+
     // truncate not allowed values to min and max angle
-    if (OFFSET_ANGLE <= this.thumbAngle && this.thumbAngle <= 2 * OFFSET_ANGLE) {
+    if (
+      OFFSET_ANGLE <= this.thumbAngle &&
+      this.thumbAngle <= 2 * OFFSET_ANGLE
+    ) {
       this.thumbAngle = MAX_ANGLE;
     }
-    if (2 * OFFSET_ANGLE <= this.thumbAngle && this.thumbAngle <= 3 * OFFSET_ANGLE) {
+    if (
+      2 * OFFSET_ANGLE <= this.thumbAngle &&
+      this.thumbAngle <= 3 * OFFSET_ANGLE
+    ) {
       this.thumbAngle = MIN_ANGLE;
     }
+
     this.amount = (this.thumbAngle - MIN_ANGLE) / (MAX_ANGLE - MIN_ANGLE);
 
     this.draw();
@@ -78,7 +92,7 @@ class GlissandoKnob extends HTMLElement {
     this.dispatchEvent(
       new CustomEvent('change', {
         detail: this.amount,
-      }),
+      })
     );
   }
 }

@@ -1,3 +1,6 @@
+import init, {
+  Synth,
+} from '../../web_modules/@glissando/glissando-synth/glissando_synth.js';
 import '../glissando-slider/glissando-slider.js';
 import '../glissando-knob/glissando-knob.js';
 
@@ -17,70 +20,74 @@ const KEY_TO_NOTE = {
   KeyK: 'C5',
 };
 
-class GlissandoApp extends HTMLElement {
-  connectedCallback() {
-    const main = document.createElement('main');
+async function run() {
+  await init();
 
-    const title = document.createElement('h1');
-    title.innerText = 'Glissando';
-    main.appendChild(title);
+  class GlissandoApp extends HTMLElement {
+    constructor() {
+      super();
 
-    this.slider = document.createElement('glissando-slider');
-    main.appendChild(this.slider);
+      this.synth = new Synth();
+      this.synth.suspend();
+    }
 
-    this.knob = document.createElement('glissando-knob');
-    main.appendChild(this.knob);
+    connectedCallback() {
+      this.createMarkup();
+      this.setupEventListeners();
+    }
 
-    const footer = document.createElement('footer');
+    createMarkup() {
+      this.innerHTML = `
+        <main>
+          <h1>Glissando</h1>
+          <glissando-slider></glissando-slider>
+          <glissando-knob></glissando-knob>
+        </main>
+        <footer>
+          <span>status</span>
+        </footer>
+      `;
+    }
 
-    const status = document.createElement('span');
-    status.innerText = 'status';
-    footer.appendChild(status);
+    setupEventListeners() {
+      const status = document.querySelector('span');
+      const slider = document.querySelector('glissando-slider');
+      const knob = document.querySelector('glissando-knob');
 
-    this.appendChild(main);
-    this.appendChild(footer);
+      slider.addEventListener('change', e => {
+        status.innerText = `slider thumb position: ${e.detail}`;
+      });
 
-    this.slider.addEventListener('change', e => {
-      status.innerText = `slider thumb position: ${e.detail}`;
-    });
+      knob.addEventListener('change', e => {
+        status.innerText = `knob angle: ${e.detail}`;
+      });
 
-    this.knob.addEventListener('change', e => {
-      status.innerText = `knob angle: ${e.detail}`;
-    });
+      document.addEventListener('keydown', e => {
+        if (!(e.code in KEY_TO_NOTE)) {
+          return;
+        }
 
-    this.runWasm();
+        const note = KEY_TO_NOTE[e.code];
+        this.synth.set_note(note);
+
+        this.synth.resume();
+      });
+
+      document.addEventListener('keyup', () => {
+        this.synth.suspend();
+      });
+
+      slider.addEventListener('change', e => {
+        this.synth.set_osc_amp(parseFloat(e.detail));
+      });
+
+      knob.addEventListener('change', e => {
+        this.synth.set_audio_buffer_amp(parseFloat(e.detail));
+      });
+    }
   }
 
-  async runWasm() {
-    const rust = await import('/web_modules/@glissando/glissando-synth/glissando_synth.js');
-    await rust.default();
-
-    const synth = new rust.Osc();
-    synth.suspend();
-
-    document.addEventListener('keydown', e => {
-      if (!(e.code in KEY_TO_NOTE)) {
-        return;
-      }
-
-      const note = KEY_TO_NOTE[e.code];
-      synth.set_note(note);
-
-      synth.resume();
-    });
-
-    document.addEventListener('keyup', () => {
-      synth.suspend();
-    });
-
-    this.slider.addEventListener('change', e => {
-      synth.set_osc_amp(parseFloat(e.detail));
-    });
-
-    this.knob.addEventListener('change', e => {
-      synth.set_audio_buffer_amp(parseFloat(e.detail));
-    });
-  }
+  customElements.define('glissando-app', GlissandoApp);
 }
 
-customElements.define('glissando-app', GlissandoApp);
+run();
