@@ -796,10 +796,17 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@glissando/glissando-synth@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@glissando/glissando-synth/-/glissando-synth-0.1.2.tgz#cc6b950f5c898eedc2dfe680e35506b595c6aab2"
-  integrity sha512-cMS2+lwM/BoVPnljXQTZDBdfB2xwQjKGvLQzbAf8usICpyRElEYf2JrxK2EC7fzhK6LZnkKBiNBY0oFOqf8KTA==
+"@glissando/glissando-synth@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@glissando/glissando-synth/-/glissando-synth-0.1.3.tgz#b81cb6c4e6f1e6747dd1e6f47e7e584e7d24bcc9"
+  integrity sha512-pbCPcG19tLSPI7gItkds/wpNBqraSZQQOZkP/mv8X5kwkJPYdvd0EZ6qToD4oR5w8SFAbxg0PjYmmhAx2a2vBA==
+
+"@koa/cors@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@koa/cors/-/cors-3.1.0.tgz#618bb073438cfdbd3ebd0e648a76e33b84f3a3b2"
+  integrity sha512-7ulRC1da/rBa6kj6P4g2aJfnET3z8Uf3SWu60cjbtxTA5g8lxRdX/Bd2P92EagGwwAhANeNw8T8if99rJliR6Q==
+  dependencies:
+    vary "^1.1.2"
 
 "@open-wc/building-utils@^2.18.0":
   version "2.18.0"
@@ -5346,9 +5353,9 @@ write@1.0.3:
     mkdirp "^0.5.1"
 
 ws@^6.1.0:
-  version "6.2.1"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-6.2.1.tgz#442fdf0a47ed64f59b6a5d8ff130f4748ed524fb"
-  integrity sha512-GIyAXC2cB7LjvpgMt9EKS2ldqr0MTrORaleiOno6TweZ6r3TKtoFQWay/2PceJ3RuBasOHzXNn5Lrw1X0bEjqA==
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-6.2.2.tgz#dd5cdbd57a9979916097652d78f1cc5faea0c32e"
+  integrity sha512-zmhltoSR8u1cnDsD43TX59mzoMZsLKqUweyYBAIvTngR3shc0W6aOZylZmq/7hqyVxPdi+5Ud2QInblgyE72fw==
   dependencies:
     async-limiter "~1.0.0"
 
