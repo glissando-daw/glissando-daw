@@ -1,0 +1,5 @@
+- Simplicity over complexity (e.g. buildless setup, etc.)
+- Leverage the platform (e.g. Web Audio)
+- Experiment with new technology (e.g. decentralization, etc.)
+- Cross-platform, universal
+- As modern as possible
