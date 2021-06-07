@@ -1,0 +1,24 @@
+{
+  "name": "glissando-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "web-dev-server --open",
+    "start:watch": "web-dev-server --watch --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glissando-daw/glissando-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/glissando-daw/glissando-app/issues"
+  },
+  "homepage": "https://github.com/glissando-daw/glissando-app#readme",
+  "devDependencies": {
+    "@web/dev-server": "^0.1.10"
+  }
+}
