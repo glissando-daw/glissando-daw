@@ -32,26 +32,31 @@
   "scripts": {
     "start": "wds --open",
     "start:watch": "wds --open --watch",
+    "start:dist": "wds --open --root-dir dist",
     "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
     "format:eslint": "eslint --ext .js,.html . --fix --ignore-path .gitignore",
     "lint:prettier": "prettier \"**/*.js\" --check --ignore-path .gitignore",
     "format:prettier": "prettier \"**/*.js\" --write --ignore-path .gitignore",
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "format": "npm run format:eslint && npm run format:prettier",
-    "build": "npm run build:wasm && npm run build:docs",
+    "build": "npm run build:wasm && npm run build:js && npm run build:docs",
     "build:wasm": "cd packages/glissando-synth && wasm-pack build --target web --scope glissando-daw --release",
+    "build:js": "rollup -c rollup.config.js",
     "build:docs": "mmdc -i docs/diagram.mmd -o docs/diagram.svg"
   },
   "devDependencies": {
     "@open-wc/eslint-config": "^4.3.0",
     "@open-wc/prettier-config": "^1.1.0",
     "@web/dev-server": "^0.1.17",
+    "@web/rollup-plugin-html": "^1.7.0",
+    "@web/rollup-plugin-import-meta-assets": "^1.0.6",
     "eslint": "^7.28.0",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
     "mermaid.cli": "^0.5.1",
-    "prettier": "^2.3.1"
+    "prettier": "^2.3.1",
+    "rollup": "^2.51.0"
   },
   "eslintConfig": {
     "extends": [
