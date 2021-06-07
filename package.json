@@ -38,7 +38,8 @@
     "format:prettier": "prettier \"**/*.js\" --write --ignore-path .gitignore",
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "format": "npm run format:eslint && npm run format:prettier",
-    "build": "mkdir web_modules && cp -R node_modules/@glissando web_modules",
+    "build": "npm run build:wasm && npm run build:docs",
+    "build:wasm": "cd packages/glissando-synth && wasm-pack build --target web --scope glissando-daw --release",
     "build:docs": "mmdc -i docs/diagram.mmd -o docs/diagram.svg"
   },
   "devDependencies": {

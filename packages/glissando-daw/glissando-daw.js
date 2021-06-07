@@ -1,6 +1,6 @@
 import init, {
   Synth,
-} from '../../web_modules/@glissando/glissando-synth/glissando_synth.js';
+} from '../glissando-synth/pkg/glissando_synth.js';
 import '../glissando-slider/glissando-slider.js';
 import '../glissando-knob/glissando-knob.js';
 

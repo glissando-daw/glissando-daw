@@ -32,7 +32,7 @@ npm config set access public
 ### build
 
 ```sh
-wasm-pack build --target web --scope glissando --release
+wasm-pack build --target web --scope glissando-daw --release
 ```
 
 ### release
