@@ -42,14 +42,15 @@
     "build:docs": "mmdc -i docs/diagram.mmd -o docs/diagram.svg"
   },
   "devDependencies": {
-    "@open-wc/eslint-config": "^2.0.0",
+    "@open-wc/eslint-config": "^4.3.0",
+    "@open-wc/prettier-config": "^1.1.0",
     "@web/dev-server": "^0.1.17",
-    "eslint": "^6.1.0",
-    "eslint-config-prettier": "^6.11.0",
-    "husky": "^1.0.0",
-    "lint-staged": "^8.0.0",
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
     "mermaid.cli": "^0.5.1",
-    "prettier": "^2.0.4"
+    "prettier": "^2.3.1"
   },
   "eslintConfig": {
     "extends": [
