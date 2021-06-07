@@ -26,19 +26,13 @@ sudo mv Synth.vst /Library/Audio/Plug-Ins/VST
 ### setup
 
 ```sh
-npm config set access public
+cargo install wasm-pack
 ```
 
 ### build
 
 ```sh
 wasm-pack build --target web --scope glissando-daw --release
-```
-
-### release
-
-```sh
-wasm-pack publish
 ```
 
 ## notebooks
