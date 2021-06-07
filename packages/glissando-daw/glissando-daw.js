@@ -87,7 +87,7 @@ async function run() {
     }
   }
 
-  customElements.define('glissando-app', GlissandoApp);
+  customElements.define('glissando-daw', GlissandoApp);
 }
 
 run();

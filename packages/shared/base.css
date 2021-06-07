@@ -27,7 +27,7 @@ span {
   bottom: 0;
 }
 
-glissando-app {
+glissando-daw {
   display: block;
   height: calc(100% - var(--spacer) * 2);
   margin: var(--spacer) auto;

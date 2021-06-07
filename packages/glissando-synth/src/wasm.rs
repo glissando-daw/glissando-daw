@@ -36,7 +36,7 @@ fn fill_samples(audio_buffer: &AudioBuffer, sample_rate: f32) {
 
 /*async fn audio_worklet_add_module(ctx: &AudioContext) -> Result<JsValue, JsValue> {
     let _audio_worklet = ctx.audio_worklet()?;
-    let promise = _audio_worklet.add_module("/packages/glissando-app/white-noise-processor.js")?;
+    let promise = _audio_worklet.add_module("/packages/glissando-daw/white-noise-processor.js")?;
     let result = wasm_bindgen_futures::JsFuture::from(promise).await?;
     Ok(result)
 }*/
