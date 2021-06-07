@@ -40,6 +40,8 @@
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "format": "npm run format:eslint && npm run format:prettier",
     "build": "npm run build:wasm && npm run build:js && npm run build:docs",
+    "build:netlify": "npm run build:rust && npm run build:wasm && npm run build:js",
+    "build:rust": "rustup toolchain install nightly && cargo install wasm-pack",
     "build:wasm": "cd packages/glissando-synth && wasm-pack build --target web --scope glissando-daw --release",
     "build:js": "rollup -c rollup.config.js",
     "build:docs": "mmdc -i docs/diagram.mmd -o docs/diagram.svg"
