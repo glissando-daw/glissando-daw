@@ -32,6 +32,7 @@
 - [Steinberg Developers][steinberg-developers]
 - [vst-rs][vst-rs]
 - [The JUCE cross-platform C++ framework][juce]
+- [OpenAudio][open-audio]
 
 ## DAW
 
@@ -115,3 +116,4 @@
 [syne-studio]: https://syne.studio
 [noise-sh]: https://noise.sh
 [web-audio-perf]: https://padenot.github.io/web-audio-perf/
+[open-audio]: https://github.com/webprofusion/OpenAudio
