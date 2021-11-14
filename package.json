@@ -48,7 +48,7 @@
     "build:docs": "mmdc -i docs/diagram.mmd -o docs/diagram.svg"
   },
   "devDependencies": {
-    "@open-wc/eslint-config": "^0.3.12",
+    "@open-wc/eslint-config": "^7.0.0",
     "@open-wc/prettier-config": "^1.1.0",
     "@web/dev-server": "^0.1.17",
     "@web/rollup-plugin-html": "^1.7.0",
